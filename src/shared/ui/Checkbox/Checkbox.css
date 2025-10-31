@@ -1,0 +1,4 @@
+.ui-checkbox { margin: 8px 0 14px; }
+.ui-checkbox label { display:flex; gap:10px; align-items:flex-start; }
+.ui-checkbox input { margin-top:3px; }
+.ui-error { color:#c0392b; font-size:12px; margin-top:6px; }

@@ -1,0 +1,13 @@
+/* src/shared/ui/CategoryWorkSelect/CategoryWorkSelect.css */
+.cw-grid { display: grid; gap: 12px; }
+.cw-field { display: grid; gap: 6px; }
+.cw-label { font-weight: 600; }
+.cw-select {
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0 10px;
+  background: var(--bg, #fff);
+}
+.cw-muted { font-size: 13px; color: #666; }
+.cw-error { font-size: 13px; color: #c02626; }

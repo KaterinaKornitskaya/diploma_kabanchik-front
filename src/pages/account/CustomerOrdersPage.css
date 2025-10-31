@@ -1,0 +1,281 @@
+/* CustomerOrdersPage.css  — оформлено в стиле страницы Фахівця */
+
+/* ===== БАЗА СТРАНИЦЫ ===== */
+.acc { padding-block: 24px; }
+
+/* хедер + панель управления */
+.acc__head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+@media (max-width: 720px) {
+  .acc__head { grid-template-columns: 1fr; align-items: start; }
+}
+
+/* панель управления (поиск + сортировка) */
+.acc__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-left: auto;
+  align-items: center;
+}
+.acc__search {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  min-width: 260px;
+  outline: none;
+  background: #fff;
+}
+.acc__search:focus { border-color: #f4b000; }
+.acc__sort {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff8e6;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+.acc__sort select {
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #fff;
+}
+
+/* ===== ВКЛАДКИ ===== */
+.acc__tabs { margin: 12px 0 8px; }
+.tabs--line .tab {
+  position: relative;
+  padding: 8px 12px;
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-weight: 600;
+}
+.tabs--line .tab:hover { color:#222; }
+.tabs--line .tab.active {
+  border-bottom-color: #f4b000;
+  color: #111;
+}
+.tab__count {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 0 8px;
+  background: #f4f6f8;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+/* ===== СПИСОК / КАРТОЧКИ ===== */
+.acc__list {
+  list-style: none;   /* убираем точки */
+  margin: 0;
+  padding: 0;
+}
+.acc__item {
+  list-style: none;   /* на всякий случай */
+  background: var(--card, #fff);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 12px 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+}
+.acc__item:hover {
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+  border-color: rgba(0,0,0,.08);
+}
+
+.acc__row { display:flex; gap:12px; align-items:center; margin:6px 0; }
+.acc__row--top { display:flex; justify-content:space-between; align-items:center; }
+.acc__date { color:#7a7a7a; }
+.acc__top-right { display:flex; gap:10px; align-items:center; }
+
+.acc__actions { display:flex; gap:8px; margin-top: 8px; }
+
+/* бейджи статусов */
+.badge { display:inline-block; padding:2px 8px; border-radius:999px; font-size:12px; border:1px solid transparent; }
+.badge--pending { color:#a66b00; border-color:#f7d48a; background:#fff8e6; }
+.badge--inprogress { color:#0b5; border-color:#98e7c0; background:#eafbf3; }
+.badge--completed { color:#1a7; border-color:#b6f2d7; background:#eefcf6; }
+.badge--cancelled { color:#a33; border-color:#f1b7b7; background:#fff0f0; }
+
+/* вспомогательное */
+.acc__muted { color: var(--muted, #666); }
+.acc__error { color: #a00; }
+.acc__empty { color:#666; padding:14px 0; }
+
+/* ===== ПАГИНАЦИЯ ===== */
+.pager {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+.pager__left, .pager__right { color:#666; font-size:14px; }
+.pager__center { display:flex; gap:6px; justify-content:center; }
+.pager__btn {
+  min-width: 34px;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.pager__btn:hover { border-color:#ccc; }
+.pager__btn.active { background:#f4b000; border-color:#f4b000; color:#fff; }
+.pager__btn:disabled { opacity:.5; cursor: default; }
+.pager__size {
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background:#fff;
+}
+
+/* ===== (ДОПОЛНИТЕЛЬНО) СТАРЫЕ КЛАССЫ — если где-то используются ===== */
+.acc__filters { display: grid; gap: 12px; margin-bottom: 16px; }
+.acc__tab {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--card, #fff);
+  border: 1px solid var(--border, #e5e5e5);
+  font-size: 14px;
+  line-height: 1;
+}
+.acc__tab.is-active { background:#fff3cd; border-color:#f3b300; }
+.acc__tab-count {
+  margin-left: 6px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: var(--bg-weak, #f6f6f6);
+  font-weight: 600;
+}
+
+/* ===== МОДАЛЬНОЕ ОКНО (редактирование заказа) ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 999;
+}
+.modal__box {
+  width: 100%;
+  max-width: 560px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+  padding: 18px;
+}
+.modal__box h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+.modal__label {
+  display:block;
+  margin-top: 10px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.modal__box textarea,
+.modal__box input[type="number"],
+.modal__box input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  outline: none;
+  font: inherit;
+}
+.modal__box textarea:focus,
+.modal__box input[type="number"]:focus,
+.modal__box input[type="text"]:focus {
+  border-color: #f4b000;
+}
+.modal__actions {
+  display:flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 14px;
+}
+@media (max-width: 480px) {
+  .modal { padding: 12px; }
+  .modal__box { padding: 14px; }
+}
+
+/* ---- Профіль: шапка ---- */
+.accp__head{
+  display:grid;
+  grid-template-columns: 140px 1fr;
+  gap:16px;
+  align-items:start;
+}
+
+.accp__avatar{
+  width:140px; height:140px;
+  border-radius:16px;
+  object-fit:cover;
+  display:block;
+}
+
+.accp__name-row{
+  display:flex; align-items:center; gap:10px;
+  flex-wrap:wrap;
+}
+
+.accp__role{ 
+  margin-left:8px;
+}
+
+.accp__info{ 
+  display:grid; gap:6px; 
+}
+
+.accp__kv{ 
+  display:flex; gap:10px; 
+  flex-wrap:wrap;
+}
+.accp__kv b{ min-width:80px; }
+.accp__val{
+  overflow-wrap:anywhere;           /* довгі email/login не ламають верстку */
+  color:#111;
+}
+
+.accp__actions{
+  display:flex; gap:8px; flex-wrap:wrap;
+  margin-top:8px;
+}
+
+/* Кнопка з плюсиком */
+.accp__add .accp__plus{ font-size:18px; line-height:1; margin-right:6px; }
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 920px){
+  .accp__head{ grid-template-columns: 100px 1fr; }
+  .accp__avatar{ width:100px; height:100px; }
+}
+
+@media (max-width: 640px){
+  .accp__head{ grid-template-columns: 1fr; }
+  .accp__avatar{ width:88px; height:88px; }
+  .accp__actions{ order:3; }
+  /* робимо кнопку компактнішою: ховаємо текст, залишаємо плюс */
+  .accp__add .accp__add-text{ display:none; }
+  .accp__add{ padding:8px 10px; }
+}
+

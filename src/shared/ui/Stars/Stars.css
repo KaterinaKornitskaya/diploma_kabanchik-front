@@ -1,0 +1,16 @@
+.stars {
+  color: #f5a623; /* тёпло-золотой */
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stars__icons {
+  letter-spacing: 1px;
+}
+
+.stars__value {
+  color: #333;
+  font-size: 0.9em;
+}

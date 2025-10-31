@@ -1,0 +1,7 @@
+.ui-field { margin-bottom: 12px; }
+.ui-field label { display:block; font-weight:600; margin-bottom:6px; }
+.ui-field input {
+  width:100%; padding:12px 14px; border:1px solid #dcdfe3; border-radius:10px; outline:none; font-size:14px;
+}
+.ui-field input:focus { border-color:#2f54eb; box-shadow:0 0 0 3px rgba(47,84,235,.12); }
+.ui-error { color:#c0392b; font-size:12px; margin-top:6px; }

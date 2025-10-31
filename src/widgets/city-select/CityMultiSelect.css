@@ -1,0 +1,35 @@
+.cmulti { width: 100%; }
+
+.cmulti__input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+  margin-bottom: 8px;
+}
+
+.cmulti__list {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  max-height: 220px;
+  overflow: auto;
+  background: #fff;
+}
+.cmulti__list ul { list-style: none; margin: 0; padding: 6px; }
+.cmulti__row { display: flex; align-items: center; gap: 8px; padding: 6px; }
+.cmulti__row:hover { background: #fafafa; }
+
+.cmulti__muted { padding: 8px; color: #777; font-size: 14px; }
+.cmulti__err { padding: 8px; color: #b42318; font-size: 14px; }
+
+.cmulti__tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.cmulti__tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 8px; border: 1px solid #e0e0e0; border-radius: 999px; font-size: 12px;
+  background: #f9f9f9;
+}
+.cmulti__tag > button {
+  border: 1px solid #ddd; background: #fff; border-radius: 50%;
+  width: 18px; height: 18px; line-height: 16px; text-align: center; cursor: pointer;
+}

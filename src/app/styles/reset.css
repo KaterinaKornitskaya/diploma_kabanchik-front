@@ -1,0 +1,16 @@
+/* ===== reset.css ===== */
+/* Минимальный reset + базовая типографика без цветовых переменных */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body, h1, h2, h3, h4, p, ul, ol { margin: 0; padding: 0; }
+
+img, svg { display: block; max-width: 100%; height: auto; }
+
+button, input, textarea, select { font: inherit; color: inherit; }
+
+a { text-decoration: none; color: inherit; }

@@ -1,0 +1,51 @@
+.bannerSect {
+  position: relative;
+  width: 100%;
+  min-height: 300px; /* можно подогнать под макет */
+  padding: 40px 20px;
+
+  background: url('../../shared/assets/banner1.jpg') no-repeat center/cover;
+  border-radius: var(--radius-lg);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* центрируем заголовки */
+  justify-content: center;
+  text-align: center;
+
+  color: var(--text-contrast, #fff); /* если не используешь класс text-white */
+}
+
+.bannerSect h1,
+.bannerSect h3 {
+  margin: 0;
+}
+
+.bannerSect h1 {
+  font-size: 28px;
+  font-weight: var(--fw-700);
+  margin-bottom: 12px;
+}
+
+.bannerSect h3 {
+  font-size: 18px;
+  font-weight: var(--fw-400);
+}
+
+/* секция прибита к правому нижнему углу */
+.bannerSectInside {
+  position: absolute;
+  right: 20%;
+  bottom: 10%;
+
+  /* если нужно: чуть крупнее и контрастнее */
+  font-size: 18px;
+  padding: 12px 24px;
+}
+
+@media (max-width: 768px) {
+  .bannerSectInside {
+    right: 1%;
+    bottom: 1%;
+  }
+}

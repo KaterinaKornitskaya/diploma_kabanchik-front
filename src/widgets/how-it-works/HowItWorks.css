@@ -1,0 +1,68 @@
+.howItWorksSect {
+  width: min(90%, 1100px);
+  margin: 0 auto;
+  padding: 40px 0 20px; /* верхний чуть больше, нижний меньше */
+  text-align: center;
+}
+
+/* заголовок секции */
+.howItWorksSect h2 {
+  margin-bottom: 32px;
+  font-weight: var(--fw-600);
+  color: var(--deepBlue);
+}
+
+/* сетка: 5 колонок, 3 ряда */
+.grid5x3 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto auto auto;
+  gap: 16px;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 24px; /* уменьшено с 40px → 24px */
+}
+
+.grid5x3 .cell img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fontBold {
+  font-size: 16px;
+  font-weight: var(--fw-700);
+  color: var(--text);
+}
+
+.fontReg {
+  font-size: 14px;
+  font-weight: var(--fw-400);
+  color: var(--muted, #666);
+}
+
+.howItWorksSect h4 {
+  font-weight: var(--fw-400);
+  margin-top: 12px;
+}
+
+/* ссылка-акцент */
+.howItWorksSect h4 .orangeColor {
+  color: var(--primary);
+  font-weight: var(--fw-700);
+  text-decoration: none;
+  transition: color .2s ease, text-decoration .2s ease;
+}
+
+.howItWorksSect h4 .orangeColor:hover {
+  text-decoration: underline;
+}
+
+/* адаптив */
+@media (max-width: 768px) {
+  .grid5x3 {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 16px; /* ещё немного меньше на мобилках */
+  }
+}

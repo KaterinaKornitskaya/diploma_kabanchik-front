@@ -1,0 +1,24 @@
+.pb { position:relative; padding-right:32px; }
+.pb::after { content:""; position:absolute; right:0; top:0; bottom:0; width:1px; background:#e5e7eb; }
+.pb-item { display:grid; grid-template-columns:60px 1fr; gap:12px 14px; align-items:start; padding:10px 0; }
+
+.pb-ico {
+  display: inline-flex;
+  width: 60px;              /* размер иконки — подгони при желании (32/40/48/56/64) */
+  height: 60px;
+ 
+  color: #2f54eb;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;         /* обрезать лишнее, чтобы оставался круг */
+}
+
+.pb-ico img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+}
+
+.pb-title { font-weight:600; margin-bottom:4px; }
+.pb-text { color:#6b7280; font-size:14px; }
+@media (max-width: 992px) { .pb { padding-right:0; } .pb::after{ display:none; } }

@@ -1,0 +1,181 @@
+/* ===== CategoryGrid.css (3 колонки + тонкая оранжевая рамка) ===== */
+
+.categories {
+  margin: 32px auto;
+  width: var(--container-width, 80%);
+  max-width: var(--container-max, 1280px);
+  box-sizing: border-box;
+}
+
+/* ====== Сетка ====== */
+/* Три колонки по умолчанию, с адаптивом */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);   /* <— ровно три колонки */
+  gap: 20px;
+  justify-content: center;
+}
+
+@media (max-width: 992px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr); /* планшеты — две */
+  }
+}
+
+@media (max-width: 600px) {
+  .categories-grid {
+    grid-template-columns: 1fr;            /* телефоны — одна */
+  }
+}
+
+/* ====== Карточка категории ====== */
+.category-card {
+  background: transparent;                                /* без белого фона */
+  border: 1px solid color-mix(in oklab, var(--brand-orange) 65%, transparent);
+  border-radius: var(--radius-md, 10px);
+  padding: 16px 20px;
+  box-shadow: none;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Эффект при наведении */
+.category-card:hover {
+  border-color: var(--brand-orange);
+  box-shadow: 0 0 8px color-mix(in oklab, var(--brand-orange) 40%, transparent);
+}
+
+/* ====== Название категории ====== */
+.category-title,
+.category-card h3 {
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--brand-orange);
+  font-size: var(--fs-h3, 20px);
+}
+
+/* ====== Подкатегории ====== */
+.subcategory-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.subcategory-list a {
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.2s;
+}
+
+.subcategory-list a:hover {
+  color: var(--brand-orange);
+  text-decoration: underline;
+}
+
+/* ====== «Показати ще» ====== */
+.show-more a,
+.category-card a.show-more {
+  color: var(--brand-orange);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.show-more a:hover,
+.category-card a.show-more:hover {
+  text-decoration: underline;
+}
+
+/* ====== Служебные состояния ====== */
+.categories-loading,
+.categories-error,
+.categories-empty {
+  color: var(--muted);
+}
+
+
+/* ===== Hover/active: “поднимается плитка” ===== */
+.category-card {
+  transition:
+    transform .18s ease,
+    box-shadow .22s ease,
+    border-color .22s ease,
+    background-color .22s ease;
+  will-change: transform;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-orange);
+  box-shadow:
+    0 10px 22px rgba(0,0,0,.10),
+    0 0 0 2px color-mix(in oklab, var(--brand-orange) 18%, transparent);
+}
+
+.category-card:active {
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 14px rgba(0,0,0,.10),
+    0 0 0 2px color-mix(in oklab, var(--brand-orange) 22%, transparent);
+}
+
+/* Фокус с клавиатуры — аккуратное кольцо бренда */
+.category-card:focus-within,
+.category-card:focus-visible {
+  outline: none;
+  border-color: var(--brand-orange);
+  box-shadow:
+    0 0 0 3px color-mix(in oklab, var(--brand-orange) 28%, transparent);
+}
+
+/* Если карточка целиком кликабельна (обёрнута ссылкой) — курсор/эффект */
+.category-card a {
+  display: block;
+}
+.category-card:hover a { text-decoration: none; }
+.category-card a { cursor: pointer; }
+
+/* Уважение настроек пользователя по анимациям */
+@media (prefers-reduced-motion: reduce) {
+  .category-card,
+  .category-card:hover,
+  .category-card:active {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* оформление подкатегорий как маркированный список */
+.subcategory-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.subcategory-list li {
+  position: relative;
+  padding-left: 18px; /* отступ под маркер */
+}
+
+/* делаем оранжевый кружок перед каждой подкатегорией */
+.subcategory-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+
+
+.subcategory-list a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+

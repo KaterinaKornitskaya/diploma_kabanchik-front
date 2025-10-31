@@ -1,0 +1,52 @@
+/* ===== themes.css ===== */
+/* Светлая тема — по умолчанию, тёмная — через [data-theme="dark"] на <html> */
+
+:root {
+  --bg: #F6F1EC;
+  --card: #ffffff;
+  --border: rgba(25,34,62,.12);
+  --text: #19223E;
+  --text-muted: rgba(25,34,62,.72);
+
+  --brand-orange: #F9BB08;     /* один и тот же оранжевый в обеих темах */
+  --brand-orange-600: #DFA607;
+  --brand-orange-50: #FFF6D8;
+
+  --brand-blue: #455A9F;
+  --brand-blue-600: #3b4f8f;
+
+  --link: var(--brand-blue);
+  --link-hover: var(--brand-blue-600);
+
+  --shadow-1: 0 2px 6px rgba(0,0,0,.10);
+  --shadow-2: 0 8px 24px rgba(0,0,0,.16);
+}
+
+/* Тёмная тема */
+:root[data-theme="dark"] {
+  --bg: #0f1427;
+  --card: #161c33;
+  --border: rgba(246,241,236,.12);
+  --text: #f6f1ec;
+  --text-muted: rgba(246,241,236,.70);
+
+  /* фирменный оранжевый остаётся прежним */
+  --brand-orange: #F9BB08;
+  --brand-orange-600: #DFA607;
+  --brand-orange-50: #3b2f12;  /* тёплая подложка бейджа на тёмном фоне */
+
+  /* ссылки немного светлее в темной теме */
+  --brand-blue: #7e93df;
+  --brand-blue-600: #6a80cf;
+
+  --link: var(--brand-blue);
+  --link-hover: var(--brand-blue-600);
+
+  --shadow-1: 0 2px 6px rgba(0,0,0,.45);
+  --shadow-2: 0 8px 24px rgba(0,0,0,.55);
+}
+
+/* Если не задаёте data-theme — подтягиваем системную тему как дефолт */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) { color-scheme: dark; }
+}

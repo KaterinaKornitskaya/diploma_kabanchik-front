@@ -1,0 +1,142 @@
+
+.ordnew {
+  padding: 48px 0;
+}
+
+.ordnew__title {
+  margin: 0 0 28px;
+  text-align: center;
+  font-size: clamp(22px, 2.2vw, 30px);
+  font-weight: var(--fw-700);
+  color: var(--deepBlue);
+}
+
+/* Карточка формы */
+.ordnew__card {
+  width: min(92%, var(--container-max, 1280px));
+  margin: 0 auto;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px);
+  box-shadow: var(--shadow-1, 0 2px 6px rgba(0,0,0,.12));
+  padding: clamp(20px, 3.2vw, 32px);
+}
+
+/* Сетка формы: 2 колонки на десктопе */
+.ordnew__form {
+  margin: 0 auto;
+  max-width: clamp(720px, 78vw, 980px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 20px;
+}
+
+/* Ютилити на всю ширину */
+.col-span-2 { grid-column: 1 / -1; }
+
+/* Блок поля */
+.form-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Подзаголовок секции (по желанию) */
+.form-section-title {
+  grid-column: 1 / -1;
+  margin: 8px 0 4px;
+  font-weight: var(--fw-700);
+  color: var(--deepBlue);
+}
+
+/* Лейбл */
+.form-label {
+  font-weight: var(--fw-600, 600);
+  color: var(--text);
+}
+
+/* Единый стиль для контролов */
+.ordnew__form input[type="text"],
+.ordnew__form input[type="email"],
+.ordnew__form input[type="tel"],
+.ordnew__form input[type="number"],
+.ordnew__form input[type="datetime-local"],
+.ordnew__form input[type="date"],
+.ordnew__form input[type="time"],
+.ordnew__form input[type="url"],
+.ordnew__form select,
+.ordnew__form textarea {
+  width: 100%;
+  min-width: 0;
+  height: var(--control-h, 44px);
+  padding: 0 12px;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px);
+  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+}
+
+.ordnew__form textarea {
+  height: auto;
+  min-height: 120px;
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+.ordnew__form input:focus,
+.ordnew__form select:focus,
+.ordnew__form textarea:focus {
+  border-color: var(--primary);
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.ordnew__form ::placeholder { color: var(--muted); }
+
+/* Подсказки/хелпы под полем */
+.help-text {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* Ошибка формы (общая) */
+.form-error {
+  grid-column: 1 / -1;
+  background: #fff4f4;
+  color: #7a1f1f;
+  border: 1px solid #f1b7b7;
+  padding: 10px 12px;
+  border-radius: var(--radius-md, 10px);
+  font-size: 14px;
+}
+
+/* Кнопки действий */
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+.form-actions .btn { min-width: 160px; }
+
+/* Декоративный разделитель секций (если делишь форму на блоки) */
+.form-divider {
+  grid-column: 1 / -1;
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0;
+}
+
+/* Адаптив */
+@media (max-width: 920px) {
+  .ordnew { padding: 40px 0; }
+  .ordnew__form {
+    grid-template-columns: 1fr;  /* одна колонка на планшете/мобиле */
+  }
+  .form-actions { justify-content: stretch; }
+  .form-actions .btn { width: 100%; }
+}

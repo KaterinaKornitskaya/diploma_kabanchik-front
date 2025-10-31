@@ -1,0 +1,15 @@
+.psu.container { max-width:1120px; margin:0 auto; padding:24px 16px 48px; }
+.psu-title { font-size:clamp(20px,3vw,28px); font-weight:700; margin:16px 0 24px; }
+.psu-grid { 
+    display:grid; 
+    grid-template-columns: 1fr 1fr;
+    gap:32px; 
+    align-items:start; }
+.psu-card { background:#fff; border:1px solid #eee; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,.04); padding:20px; }
+@media (max-width: 992px){ .psu-grid{ grid-template-columns:1fr; } }
+
+.psu.container p { color:#6b7280; margin:8px 0 0; }
+
+.page-white {
+  background: #fff;
+}

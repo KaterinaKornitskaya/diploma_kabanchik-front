@@ -1,0 +1,32 @@
+.ps1-form {
+  display: grid;
+  gap: 16px;
+  max-width: 640px;      /* сделай шире/уже по вкусу */
+  margin: 0 auto;        /* по центру */
+}
+
+.ps1-row {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.ps1-row2 {
+  display:grid; grid-template-columns:1fr 1fr; gap:12px;
+}
+
+
+@media (max-width: 640px) {
+  .ps1-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ps1-row2 { grid-template-columns:1fr; }
+}
+
+.ui-error {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 10px 12px;
+  border-radius: 8px;
+}

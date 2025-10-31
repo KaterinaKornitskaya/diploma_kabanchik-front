@@ -1,0 +1,85 @@
+
+
+
+/* ==== ШАПКА профиля ==== */
+.pros__header{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  padding: 4px 0 12px;
+  margin-bottom: 8px;
+}
+.pros__ava--lg{ width:64px; height:64px; border-radius:999px; object-fit:cover; }
+.pros__name--lg{ font-size:20px; font-weight:700; margin-bottom:4px; }
+.pros__rate{ display:flex; align-items:center; gap:6px; }
+.pros__rate-count{ line-height:1; }
+
+/* заголовки секций */
+.pros__section-title{
+  margin: 12px 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* ==== Сетка карточек (2 в ряд) ==== */
+.pros__list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr)); /* две колонки всегда */
+  gap:14px;
+}
+@media (max-width:720px){
+  .pros__list{ grid-template-columns: 1fr; }       /* одна колонка на узких */
+}
+
+/* карточка */
+.pros__item{
+  border:1px solid #eee;
+  border-radius:12px;
+  padding:32px;
+  background:#fff;
+  min-width:0; /* важно для переносов в grid-ячейке */
+}
+
+/* заголовок карточки */
+.pros__head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:8px;
+}
+.pros__work{ font-weight:600; }
+.pros__price{ font-weight:700; }
+
+/* фото-миниатюры в карточке */
+.pros__photos{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:6px;
+  margin:8px 0;
+}
+.pros__photos img{
+  width:100%; height:78px; object-fit:cover; border-radius:10px;
+}
+
+/* описание */
+.pros__desc{ line-height:1.55; color:#333; }
+
+/* кнопка «створити замовлення» — переносит строки и не шире карточки */
+.pros__order-btn{
+  display:block;
+  width:100%;
+  max-width:100%;
+  white-space:normal;         /* перенос строк разрешён */
+  overflow-wrap:anywhere;     /* можно переносить в любом месте */
+  word-break:break-word;      /* страховка */
+  line-height:1.3;
+  text-align:center;
+  margin-top:8px;
+}
+
+

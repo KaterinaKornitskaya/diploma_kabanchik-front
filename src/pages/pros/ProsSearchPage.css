@@ -1,0 +1,194 @@
+/* ===== Контейнер страницы ===== */
+.pros {
+  padding-top: 12px;
+}
+
+/* ===== Поисковая форма ===== */
+.pros__search {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 8px 0 20px;
+}
+
+.pros__search input {
+  flex: 1 1 auto;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #e4e4e7;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: box-shadow .15s ease, border-color .15s ease;
+}
+
+.pros__search input:focus {
+  border-color: #ffb100;
+  box-shadow: 0 0 0 3px rgba(255, 177, 0, .2);
+}
+
+/* ===== Состояния ===== */
+.error {
+  color: #d92d20;
+  background: #fff1f1;
+  border: 1px solid #ffd9d9;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin: 8px 0 16px;
+}
+
+.muted {
+  color: #71717a;
+  font-size: 14px;
+}
+
+/* ===== Сетка карточек результатов ===== */
+.pros__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+  margin: 16px 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+/* Карточка */
+.pros__item {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 2px 8px rgba(17, 24, 39, .04);
+}
+
+/* Шапка карточки */
+.pros__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+/* Блок "кто" + аватар */
+.pros__who {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-width: 0; /* чтобы текст не выталкивал */
+}
+
+.pros__ava {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #eee;
+  flex: 0 0 44px;
+}
+
+/* Имя и работа */
+.pros__name {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.pros__name a {
+  color: #111827;
+  text-decoration: none;
+}
+
+.pros__name a:hover {
+  text-decoration: underline;
+}
+
+.pros__work {
+  color: #475569;
+  font-size: 14px;
+}
+
+/* Рейтинг */
+.pros__rate {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.pros__rate-count {
+  color: #6b7280;
+  font-size: 14px;
+  margin-left: 2px;
+}
+
+/* Цена */
+.pros__price {
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+/* Мини-галерея фото (до 4 шт) */
+.pros__photos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.pros__photos img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+/* Описание */
+.pros__desc {
+  margin-top: 10px;
+  color: #374151;
+  line-height: 1.5;
+  font-size: 14.5px;
+  word-break: break-word;
+}
+
+.pros__desc p {
+  margin: 0 0 8px;
+}
+
+/* Действия (кнопки) */
+.pros__actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 12px;
+}
+
+/* Если используешь .accp-btn глобально — оставь. Добавим чуть лучше поведение в строке */
+.pros__actions .accp-btn {
+  max-width: 100%;
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 640px) {
+  .pros__search {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .pros__search button,
+  .pros__search .accp-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1280px) {
+  /* Чуть крупнее карточки на очень широких экранах */
+  .pros__list {
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  }
+}

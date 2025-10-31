@@ -1,0 +1,6 @@
+.faq { margin-top: 40px; }
+.faq h3 { font-size:18px; margin:0 0 8px; }
+.faq-hr { height:1px; background:#e5e7eb; margin:12px 0 20px; }
+.faq details { margin-bottom:12px; }
+.faq summary { cursor:pointer; font-weight:600; }
+.faq p { color:#6b7280; margin:8px 0 0; }

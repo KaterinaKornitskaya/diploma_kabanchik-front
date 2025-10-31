@@ -1,0 +1,58 @@
+/* ===== variables.css ===== */
+/* Дизайн-токены: цвета, размеры, типографика, spacing, радиусы, тени, контейнеры */
+
+:root {
+  /* brand / accent */
+  --brand-orange: #F9BB08;      /* фирменный оранжевый */
+  --brand-orange-600: #DFA607;  /* hover/active */
+  --brand-orange-50: #FFF6D8;   /* мягкая подложка/бейджи */
+
+  --brand-blue: #455A9F;        /* вторичный (ссылки/вторичные кнопки) */
+  --brand-blue-600: #3b4f8f;
+
+  --danger: #fe6575;
+  --success: #2e9e6d;
+  --warning: #f4c84a;
+
+  /* базовые поверхности/текст (значения по умолчанию — светлая тема; в themes.css переопределяются) */
+  --bg: #F6F1EC;
+  --card: #ffffff;
+  --border: rgba(25,34,62,.12);
+  --text: #19223E;
+  --text-muted: rgba(25,34,62,.72);
+
+  /* ссылки и акценты */
+  --link: var(--brand-blue);
+  --link-hover: var(--brand-blue-600);
+  --accent: var(--brand-orange);
+  --accent-contrast: #0b1020;   /* контрастный текст на оранжевом */
+
+  /* типографика */
+  --font-sans: ui-sans-serif, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --fs-h1: 36px;
+  --fs-h2: 28px;
+  --fs-h3: 22px;
+  --fs-h4: 18px;
+  --fs-body: 15px;
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-700: 700;
+
+  /* размеры/spacing/радиусы/тени */
+  --control-h: 44px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+
+  --shadow-1: 0 2px 6px rgba(0,0,0,.10);
+  --shadow-2: 0 8px 24px rgba(0,0,0,.16);
+
+  /* контейнер */
+  --container-max: 1200px;
+  --container-pad: 16px;
+}

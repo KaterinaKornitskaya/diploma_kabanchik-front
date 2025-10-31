@@ -1,0 +1,129 @@
+:root {
+  --footer-blue: #3b5398;
+  --footer-yellow: #f3b303;            /* сочетается с --brand-orange */
+  --footer-text: #0d1b4a;
+}
+
+.site-footer {
+  color: var(--footer-text);
+  margin-top: 48px;
+  background: #fff;
+  border-top: 1px solid color-mix(in oklab, var(--footer-text) 10%, transparent);
+  box-shadow: 0 -6px 20px rgba(0,0,0,.06);
+}
+
+/* верхняя узкая полоса */
+.sf-topbar {
+  background: var(--footer-blue);
+  color: #fff;
+  font-size: 14px;
+}
+
+.sf-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sf-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sf-ico {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.18);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* основной блок футера */
+.sf-main {
+  background: var(--footer-yellow);
+  /* делаем футер заметно выше на страницах с малым контентом */
+  padding: clamp(28px, 4.2vw, 48px) 0;
+  /* адаптивная минимальная высота: не меньше 28vh, но не больше 420px */
+  min-height: clamp(260px, 28vh, 420px);
+}
+
+.sf-grid {
+  display: grid;
+  grid-template-columns: 200px repeat(4, 1fr);
+  gap: 28px 32px;
+  align-items: start;
+}
+
+.sf-logo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.sf-col h4 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0d1b4a;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+
+.sf-col a {
+  display: block;
+  color: #0d1b4a;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 6px 0;
+  opacity: .9;
+}
+.sf-col a:hover { text-decoration: underline; }
+
+/* нижняя тонкая полоса с копирайтом */
+.sf-bottombar {
+  background: #fff7dd;
+  border-top: 1px solid color-mix(in oklab, var(--footer-text) 12%, transparent);
+}
+
+.sf-bottom-inner {
+  padding: 12px 16px;
+  gap: 12px;
+}
+.sf-bottom-inner small {
+  color: color-mix(in oklab, var(--footer-text) 80%, #000);
+}
+.sf-bottom-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.sf-bottom-links a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 13px;
+}
+.sf-bottom-links a:hover { text-decoration: underline; }
+
+@media (max-width: 992px) {
+  .sf-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sf-logo {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .sf-container { flex-direction: column; gap: 8px; }
+  .sf-grid { grid-template-columns: 1fr; }
+  .sf-bottom-inner { text-align: center; }
+  .sf-bottom-links { gap: 8px; }
+}

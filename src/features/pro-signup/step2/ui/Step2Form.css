@@ -1,0 +1,33 @@
+.ps2-form { display:grid; gap:12px; }
+
+.ps2-phone {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.ps2-hint {
+  color:#6b7280;
+  font-size: 14px;
+  margin-top: -4px;
+}
+
+.ps2-code {
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 4px;
+  padding: 12px 14px;
+  border: 1px solid #dcdfe3;
+  border-radius: 10px;
+  outline: none;
+}
+.ps2-code:focus {
+  border-color: #2f54eb;
+  box-shadow: 0 0 0 3px rgba(47,84,235,.12);
+}
+
+.ps2-error { color:#c0392b; font-size:12px; }
+
+.ps2-resend {
+  display:flex; justify-content:flex-start;
+}

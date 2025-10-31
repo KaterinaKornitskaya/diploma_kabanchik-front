@@ -1,0 +1,78 @@
+/* ===== HomePage.css ===== */
+
+
+
+
+/* Контейнер main внутри .homepage */
+.homepage #main {
+  display: grid;
+  gap: 32px;                 /* вертикальный ритм между виджетами */
+  padding-block: 24px;       /* верх/низ дыхание для главной */
+}
+
+/* Герой: внешний отступы и выравнивание того, что рендерит <Hero /> */
+.homepage .hero {
+  margin-top: 8px;
+}
+
+/* Если в Hero есть своя обёртка - чуть сузим текстовую колонку на больших экранах */
+@media (min-width: 992px) {
+  .homepage .hero__content,
+  .homepage .hero .content,
+  .homepage .hero .inner {
+    max-width: 880px;
+  }
+}
+
+/* Секция «пошук №2» под категориями */
+.search2Sect {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+  padding: 20px;
+}
+
+.search2Sect h3 {
+  margin: 0 0 12px;
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-700);
+  color: var(--text);
+}
+
+/* Убедимся, что внутренний SearchBar растягивается и не прилипает к краям */
+.search2Sect .searchbar,
+.search2Sect form,
+.search2Sect .input {
+  width: 100%;
+}
+
+/* Отступы между блоками-виджетами ниже */
+.homepage .how-it-works,
+.homepage .cta-banner {
+  margin-top: 8px;
+}
+
+/* Карточки внутри главной (если виджеты используют .card — чуть унифицируем) */
+.homepage .card {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+}
+
+/* Кнопки на главной — в строках поиска и CTA */
+.homepage .btn {
+  white-space: nowrap;
+}
+
+/* Адаптивные поправки */
+@media (max-width: 768px) {
+  .homepage #main {
+    gap: 24px;
+    padding-block: 16px;
+  }
+  .search2Sect { padding: 16px; }
+}
+
+/* Вспомогательное — если в <Hero /> у тебя заголовок/подзаголовок слишком «залипает» к поиску */
+.homepage .hero-spacer-sm { margin-top: 8px; }
+.homepage .hero-spacer-md { margin-top: 16px; }

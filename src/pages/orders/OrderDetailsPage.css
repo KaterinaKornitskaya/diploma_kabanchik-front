@@ -1,0 +1,141 @@
+.order-details {
+  padding: 36px 0;
+}
+
+/* ===== Head ===== */
+.od-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.od-title {
+  margin: 0;
+  font-size: clamp(22px, 2.2vw, 30px);
+  font-weight: var(--fw-700);
+  color: var(--deepBlue);
+}
+
+/* бейдж статусу — брендові кольори */
+.od-badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  line-height: 1;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+.od-badge--pending { background: color-mix(in oklab, var(--primary) 14%, #fff); border-color: color-mix(in oklab, var(--primary) 30%, transparent); color: var(--text); }
+.od-badge--inprogress { background: color-mix(in oklab, var(--deepBlue) 12%, #fff); border-color: color-mix(in oklab, var(--deepBlue) 35%, transparent); color: var(--deepBlue); }
+.od-badge--completed { background: color-mix(in oklab, #16a34a 14%, #fff); border-color: color-mix(in oklab, #16a34a 35%, transparent); color: #0f6e31; }
+.od-badge--cancelled { background: color-mix(in oklab, var(--danger) 14%, #fff); border-color: color-mix(in oklab, var(--danger) 35%, transparent); color: #8a1122; }
+
+/* ===== Details card ===== */
+.od-card {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px);
+  box-shadow: var(--shadow-1);
+  padding: clamp(16px, 2.6vw, 24px);
+  display: grid;
+  gap: 10px;
+}
+
+/* пара «ключ—значення» */
+.od-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+.od-key {
+  font-weight: var(--fw-700);
+  color: var(--deepBlue);
+}
+.od-val {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ===== Feedback ===== */
+.od-feedback {
+  margin-top: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px);
+  box-shadow: var(--shadow-1);
+  padding: clamp(16px, 2.6vw, 24px);
+}
+.od-feedback h3 {
+  margin: 0 0 8px;
+  font-weight: var(--fw-700);
+  color: var(--deepBlue);
+}
+
+/* звёзды */
+.stars-input {
+  display: inline-flex;
+  gap: 6px;
+  margin: 6px 0 10px;
+}
+.star {
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  color: #c9c9c9;
+  transition: transform .1s ease, color .15s ease;
+}
+.star input { display: none; }
+.star--on { color: var(--primary); }
+.star:hover { transform: scale(1.06); }
+
+/* textarea */
+.od-textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: 10px 12px;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px);
+  transition: border-color .15s ease, box-shadow .15s ease;
+  resize: vertical;
+}
+.od-textarea:focus {
+  border-color: var(--primary);
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* кнопки */
+.od-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.od-actions--solo { justify-content: flex-start; }
+
+/* muted / error */
+.od-muted { color: var(--muted); }
+.od-error {
+  color: #8a1122;
+  background: #fff4f4;
+  border: 1px solid #f1b7b7;
+  padding: 10px 12px;
+  border-radius: var(--radius-md, 10px);
+}
+
+/* доступность */
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px,1px,1px,1px);
+  padding: 0; border: 0; height: 1px; width: 1px; overflow: hidden;
+}
+
+/* адаптив */
+@media (max-width: 640px) {
+  .od-row { grid-template-columns: 1fr; }
+}

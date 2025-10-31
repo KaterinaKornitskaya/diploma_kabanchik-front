@@ -1,0 +1,106 @@
+.order-created {
+  padding: 56px 0;
+}
+
+/* основная карточка */
+.success-card {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  background: var(--card, #fff);
+  color: var(--text);
+  border-radius: var(--radius-lg, 14px);
+  box-shadow: var(--shadow-2, 0 6px 18px rgba(0,0,0,0.12));
+  padding: clamp(24px, 4vw, 48px);
+}
+
+/* шапка успеха */
+.success-head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+/* фирменная «галочка» */
+.check-badge {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--primary, #f9bb08);
+  color: #fff;
+  font-size: 38px;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(249,187,8,0.4);
+}
+
+/* заголовки */
+.titles h1 {
+  margin: 0;
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: var(--fw-700, 700);
+  color: var(--deepBlue, #0d1b4a);
+}
+
+.subtitle {
+  margin-top: 6px;
+  color: var(--muted, #555);
+  font-size: 16px;
+}
+
+/* бейдж с номером */
+.order-id {
+  margin-top: 10px;
+  color: var(--text);
+}
+.order-id .chip {
+  margin-left: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--primary) 18%, var(--card));
+  border: 1px solid color-mix(in oklab, var(--primary) 35%, transparent);
+  font-weight: 600;
+}
+
+/* кнопки */
+.order-created__actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.order-btn {
+  min-height: 52px;
+  font-size: 16px;
+  font-weight: var(--fw-700, 700);
+  border-radius: var(--radius-md, 10px);
+}
+
+/* переопределяем текст */
+.btn.btn--primary {
+  color: #1f2937;
+  background: var(--primary, #f9bb08);
+}
+.btn.btn--primary:hover {
+  background: color-mix(in oklab, var(--primary) 85%, #fff);
+}
+
+.btn.btn--outline {
+  border-color: var(--primary, #f9bb08);
+  color: var(--primary, #f9bb08);
+}
+.btn.btn--outline:hover {
+  background: color-mix(in oklab, var(--primary) 10%, #fff);
+}
+
+/* адаптив */
+@media (max-width: 700px) {
+  .check-badge {
+    width: 58px;
+    height: 58px;
+    font-size: 30px;
+  }
+}

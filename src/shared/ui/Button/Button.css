@@ -1,0 +1,152 @@
+/* ===== базовые стили ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: var(--control-h, 44px);
+  padding: 0 16px;
+
+  font: inherit;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+
+  /* важное: даём возможность задавать радиус снаружи (SearchBar) */
+  border-radius: var(--btn-radius, var(--radius-md));
+  border: none;
+  cursor: pointer;
+
+  transition:
+    background-color .18s ease,
+    color .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease,
+    filter .18s ease;
+}
+
+.btn:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ===== Варианты ===== */
+
+/* PRIMARY — фирменный оранжевый */
+.btn--primary {
+  background: var(--brand-orange);
+  color: var(--accent-contrast);
+  /* важное: делаем явную границу, чтобы могла «продолжать» рамку инпута */
+  border: 2px solid var(--brand-orange);
+}
+
+.btn--primary:hover   { filter: brightness(0.96); }
+.btn--primary:active  { filter: brightness(0.92); }
+.btn--primary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand-orange) 25%, transparent);
+}
+
+/* DANGER */
+.btn--danger {
+  background: var(--danger);
+  color: #fff;
+  border: 2px solid var(--danger);
+}
+.btn--danger:hover   { filter: brightness(0.96); }
+.btn--danger:active  { filter: brightness(0.92); }
+.btn--danger:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--danger) 25%, transparent);
+}
+
+/* OUTLINE — по оранжевому */
+.btn--outline {
+  background: transparent;
+  border: 2px solid var(--brand-orange);
+  color: var(--brand-orange);
+}
+.btn--outline:hover {
+  background: var(--brand-orange);
+  color: var(--accent-contrast);
+}
+.btn--outline:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand-orange) 25%, transparent);
+}
+
+/* GHOST */
+.btn--ghost {
+  background: transparent;
+  border: none;
+  color: var(--brand-orange);
+}
+.btn--ghost:hover { background: rgba(0,0,0,0.05); }
+:root[data-theme="dark"] .btn--ghost:hover { background: rgba(255,255,255,0.10); }
+.btn--ghost:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand-orange) 25%, transparent);
+}
+
+/* ===== размеры ===== */
+.btn--sm { height: 32px; padding: 0 12px; font-size: 14px; }
+.btn--md { height: 40px; padding: 0 16px; font-size: 15px; }
+.btn--lg { height: 48px; padding: 0 20px; font-size: 16px; }
+
+/* на всю ширину контейнера */
+.btn--block { display: flex; width: 100%; }
+
+/* Синяя (если используешь где-то) */
+.btn--deepBlue {
+  background: var(--brand-blue);
+  color: #fff;
+  border: 2px solid var(--brand-blue);
+}
+.btn--deepBlue:hover  { filter: brightness(0.96); }
+.btn--deepBlue:active { filter: brightness(0.92); }
+.btn--deepBlue:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand-blue) 25%, transparent);
+}
+
+/* ===== Иконки в кнопке ===== */
+.btn .icon-left  { margin-right: 8px; display: inline-flex; }
+.btn .icon-right { margin-left: 8px; display: inline-flex; }
+.btn svg { width: 18px; height: 18px; display: block; }
+
+/* ===== Специально для сращивания с инпутом поиска ===== */
+/* К кнопке, стоящей справа от .search-input, мы уже в SearchBar.css добавляем:
+   - border-left: none;
+   - правые скругления;
+   Здесь лишь страхуемся, если класс .search-submit висит на <Button>. */
+
+.search-submit.btn {
+  border-left: none; /* продолжение рамки инпута */
+  border-top-right-radius: var(--radius-md) !important;
+  border-bottom-right-radius: var(--radius-md) !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+/* --- спец для кнопки в SearchBar справа --- */
+.search-submit.btn {
+  border-left: none;
+  border-top-right-radius: var(--radius-md) !important;
+  border-bottom-right-radius: var(--radius-md) !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+
+  /* убираем тени и движение */
+  box-shadow: none !important;
+  transform: none !important;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.search-submit.btn:hover,
+.search-submit.btn:active {
+  box-shadow: none !important;
+  transform: none !important;
+  filter: brightness(0.96);
+}

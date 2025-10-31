@@ -1,0 +1,148 @@
+/* ===== Hero.css ===== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+  background: url("../../shared/assets/main_picture.jpg") no-repeat center/cover;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px 80px;
+  color: var(--text);
+}
+
+/* ===== Подложка под текст ===== */
+.hero-panel {
+  background: rgba(255, 255, 255, 0.92);
+  border: 2px solid var(--brand-orange);
+  border-radius: var(--radius-md);
+  padding: 28px 36px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(4px);
+  z-index: 2; /* поверх ромбов */
+  position: relative;
+}
+
+/* ===== Плавающие ромбы ===== */
+.hero-floating {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.float-diamond {
+  position: absolute;
+  background: var(--brand-orange);
+  opacity: 0.55;
+  transform: rotate(45deg);
+  animation: floatDiamond 16s ease-in-out infinite alternate;
+}
+
+/* Разный размер, позиция, скорость — эффект глубины */
+.diamond-1 { width: 30px; height: 30px; top: 10%; left: 15%; animation-duration: 18s; }
+.diamond-2 { width: 22px; height: 22px; top: 20%; left: 70%; animation-duration: 14s; }
+.diamond-3 { width: 40px; height: 40px; top: 65%; left: 80%; animation-duration: 22s; }
+.diamond-4 { width: 26px; height: 26px; top: 75%; left: 25%; animation-duration: 19s; }
+.diamond-5 { width: 34px; height: 34px; top: 30%; left: 45%; animation-duration: 17s; }
+.diamond-6 { width: 28px; height: 28px; top: 60%; left: 10%; animation-duration: 20s; }
+.diamond-7 { width: 38px; height: 38px; top: 15%; left: 85%; animation-duration: 23s; }
+.diamond-8 { width: 24px; height: 24px; top: 50%; left: 55%; animation-duration: 15s; }
+.diamond-9 { width: 42px; height: 42px; top: 40%; left: 5%;  animation-duration: 24s; }
+.diamond-10{ width: 36px; height: 36px; top: 80%; left: 60%; animation-duration: 21s; }
+
+/* Анимация плавания */
+@keyframes floatDiamond {
+  0% {
+    transform: translate(0, 0) rotate(45deg) scale(1);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translate(12px, -18px) rotate(45deg) scale(1.05);
+  }
+  50% {
+    transform: translate(-10px, 12px) rotate(45deg) scale(0.95);
+  }
+  75% {
+    transform: translate(18px, 10px) rotate(45deg) scale(1.08);
+  }
+  100% {
+    transform: translate(-12px, -10px) rotate(45deg) scale(1);
+    opacity: 0.6;
+  }
+}
+
+/* ===== Заголовки ===== */
+.hero h1,
+.hero h2 {
+  margin: 0;
+  color: var(--brand-orange);
+}
+
+.hero h1 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: var(--fw-700);
+}
+
+.hero h2 {
+  font-size: clamp(18px, 2.4vw, 24px);
+  font-weight: var(--fw-600);
+  color: var(--accent-contrast)
+}
+
+/* ===== Иконки ===== */
+.hero-icons {
+  margin-top: 0;
+  padding-top: 24px;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  background: var(--card);
+  padding: 24px 0;
+  box-shadow: var(--shadow-1);
+}
+
+.hero-icons__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.hero-icons__inner img {
+  height: 56px;
+  width: auto;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.hero-icons__inner a:hover img {
+  transform: translateY(-3px);
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 320px;
+    padding: 32px 16px 60px;
+  }
+
+  .hero-panel {
+    padding: 20px 24px;
+  }
+
+  .float-diamond {
+    opacity: 0.4;
+  }
+}
+
+/* ===== Тёмная тема ===== */
+:root[data-theme="dark"] .hero-panel {
+  background: rgba(25, 25, 25, 0.85);
+  border-color: var(--brand-orange);
+  color: #fff;
+}
